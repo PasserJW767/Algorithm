@@ -1,3 +1,9 @@
+// 给定int a和intb，在不使用if-else等比较和判断运算符的情况下返回较大的那个数。若两数相同则返回任意一个。
+
+// 测试样例：
+// 1，2
+// 返回：2
+
 import java.util.*;
 
 public class Max {
