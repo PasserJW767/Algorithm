@@ -31,4 +31,14 @@ class Exchange:
             else:
                 result.append(ji[i // 2])
         return int("".join(result), 2)
+
+    def exchangeOddEven_2(self, x):
+        # 0x55555555是为了取出偶位数
+        # 0xAAAAAAAA是为了取出奇位数
+        odd = 0x55555555&x >>1  #偶位上的数字右移
+        even = 0xAAAAAAAA&x <<1 #奇位上的数左移
+        # 偶位移到奇位
+        # 奇位移到偶位
+        # 运用或运算得到结果
+        return even | odd
         
