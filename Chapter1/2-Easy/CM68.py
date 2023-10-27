@@ -27,8 +27,8 @@ class MaxSum:
                 s += A[i]
                 if s > maxS:
                     maxS = s
-            elif A[i] < 0 and s + A[i] < 0:
-                s = 0
+            elif A[i] < 0 and s + A[i] < s:
+                s = A[i]
             
         return maxS
     
