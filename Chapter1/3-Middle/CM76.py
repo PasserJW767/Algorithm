@@ -6,6 +6,9 @@
 # -*- coding:utf-8 -*-
 
 class Distance:
+    '''
+    我写的方法，复杂度应该是O(nlogn)，但是有一些测试用例无法通过
+    '''
     def getDistance(self, article, n, x, y):
         # write code here
         # article = article.split(' ')
@@ -78,7 +81,24 @@ class Distance:
         #     return x_idx[len(x_idx) - 1]
         # else:
         #     return min(y - x_idx[bound - 1], x_idx[bound] - y)
+
+    '''
+    这道题用O(n)复杂度就可以解出来，是我弄复杂了
+    '''
+    def getDistance2(self, article, n, x, y):
+        x_idx = -1
+        y_idx = -1
+        min_distance = float('inf')
+        for idx in range(len(article)):
+            if article[idx] == x:
+                x_idx = idx
+            elif article[idx] == y:
+                y_idx = idx
+            if x_idx != -1 and y_idx != -1:
+                min_distance = min(min_distance, abs(x_idx - y_idx))
+        return min_distance
+
         
 
 if __name__ == '__main__':
-    print(Distance().getDistance(["lab","lab","nhb","nhb","lab","nhb","nhb","nhb","lab"], 9, 'nhb', 'lab'))
+    print(Distance().getDistance2(["lab","lab","nhb","nhb","lab","nhb","nhb","nhb","lab"], 9, 'nhb', 'lab'))
